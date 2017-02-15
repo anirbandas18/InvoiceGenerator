@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report2" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="6aeace17-c0a0-45d4-babf-d43efc88250b">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     Goods.`Serial_No` AS Goods_Serial_No,
+     Goods.`Description` AS Goods_Description,
+     Goods.`Quantity` AS Goods_Quantity,
+     Goods.`Rate` AS Goods_Rate,
+     Goods.`Per` AS Goods_Per,
+     Goods.`Value_` AS Goods_Value_,
+     Goods.`VAT` AS Goods_VAT,
+     Goods.`Tax` AS Goods_Tax,
+     Goods.`Sub_Total` AS Goods_Sub_Total,
+     Invoice.`Bill_No` AS Invoice_Bill_No,
+     Invoice.`VAT_No` AS Invoice_VAT_No,
+     Invoice.`Bill_Date` AS Invoice_Bill_Date,
+     Invoice.`Messers` AS Invoice_Messers,
+     Invoice.`Buyers_VAT_No` AS Invoice_Buyers_VAT_No,
+     Invoice.`Address` AS Invoice_Address,
+     Invoice.`Buyers_Order_No` AS Invoice_Buyers_Order_No,
+     Invoice.`Date_1` AS Invoice_Date_1,
+     Invoice.`Challan_No` AS Invoice_Challan_No,
+     Invoice.`Date_2` AS Invoice_Date_2,
+     Invoice.`Total_Items` AS Invoice_Total_Items,
+     Invoice.`Grand_Total` AS Invoice_Grand_Total
+FROM
+     `Goods` Goods,
+     `Invoice` Invoice
+WHERE
+      Invoice.Bill_No = '20151618' and Goods.Bill_No_ = '20151618']]>
+	</queryString>
+	<field name="Goods_Serial_No" class="java.lang.Integer"/>
+	<field name="Goods_Description" class="java.lang.String"/>
+	<field name="Goods_Quantity" class="java.math.BigDecimal"/>
+	<field name="Goods_Rate" class="java.math.BigDecimal"/>
+	<field name="Goods_Per" class="java.lang.String"/>
+	<field name="Goods_Value_" class="java.math.BigDecimal"/>
+	<field name="Goods_VAT" class="java.lang.Double"/>
+	<field name="Goods_Tax" class="java.math.BigDecimal"/>
+	<field name="Goods_Sub_Total" class="java.lang.Double"/>
+	<field name="Invoice_Bill_No" class="java.lang.String"/>
+	<field name="Invoice_VAT_No" class="java.math.BigDecimal"/>
+	<field name="Invoice_Bill_Date" class="java.sql.Timestamp"/>
+	<field name="Invoice_Messers" class="java.lang.String"/>
+	<field name="Invoice_Buyers_VAT_No" class="java.math.BigDecimal"/>
+	<field name="Invoice_Address" class="java.lang.String"/>
+	<field name="Invoice_Buyers_Order_No" class="java.math.BigDecimal"/>
+	<field name="Invoice_Date_1" class="java.sql.Timestamp"/>
+	<field name="Invoice_Challan_No" class="java.lang.String"/>
+	<field name="Invoice_Date_2" class="java.sql.Timestamp"/>
+	<field name="Invoice_Total_Items" class="java.lang.Integer"/>
+	<field name="Invoice_Grand_Total" class="java.math.BigDecimal"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="119" splitType="Stretch">
+			<staticText>
+				<reportElement x="116" y="46" width="326" height="17" uuid="abb6f31a-62fa-44ab-8ccb-b20e8bce9d12"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[20, NETAJI SUBHAS ROAD, GROUND FLOOR, KOLKATA - 700 001]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="57" height="20" uuid="2bc69a17-c2c0-4c56-a6ee-c331bf76eebc"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Invoice No.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="228" y="0" width="100" height="20" uuid="c09644fd-a346-41c1-bc89-738137a60e74"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[TAX INVOICE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="228" y="20" width="100" height="26" uuid="201dbe75-e649-45ea-9168-685e85865c8f"/>
+				<textElement>
+					<font size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[AS Udyog]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="431" y="20" width="48" height="20" uuid="a7ed05c8-6be9-446c-91e1-4cac141cab36"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[VAT No.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="116" y="63" width="326" height="27" uuid="8d08c601-762d-4051-a52f-d76b4f86c2e7"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[MAILING ADDRESS : C/o : Ashoke Saha, DE 110 (G-3), PUBALI, ASHWININAGAR, BAGUIATI, KOLKATA - 700 059]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="116" y="90" width="326" height="20" uuid="ff263606-d31d-4e3e-b6b6-f823b0c5eedb"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[PHONE : 9830105851, 9433228818]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="431" y="0" width="50" height="20" uuid="00f7ab3f-da62-4a51-a6be-9692eba14630"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Bill Date]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="110" width="555" height="1" uuid="1992985e-d806-475c-b2bc-874b9c8784d5"/>
+			</line>
+			<textField>
+				<reportElement x="57" y="0" width="100" height="20" uuid="c72b062b-60dd-4eb6-a5ff-519793d29be3"/>
+				<textFieldExpression><![CDATA[$F{Invoice_Bill_No}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="479" y="20" width="76" height="20" uuid="2de66adf-6cb9-40b1-8945-3f24d252b749"/>
+				<textFieldExpression><![CDATA[$F{Invoice_VAT_No}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="481" y="0" width="74" height="20" uuid="cb481610-f8fb-4a51-a25b-c92f7142eef8"/>
+				<textFieldExpression><![CDATA[$F{Invoice_Bill_Date}]]></textFieldExpression>
+			</textField>
+			<componentElement>
+				<reportElement x="0" y="20" width="157" height="20" uuid="5062471b-d317-4e5e-b00d-8cf99cdaf899"/>
+				<jr:barbecue xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" type="Code39 (Extended)" drawText="false" checksumRequired="false">
+					<jr:codeExpression><![CDATA[$F{Invoice_Bill_No}]]></jr:codeExpression>
+				</jr:barbecue>
+			</componentElement>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="68" splitType="Stretch">
+			<textField>
+				<reportElement x="102" y="0" width="453" height="20" uuid="2bbd06c7-991f-4514-8dba-1aa037c32bb2"/>
+				<textFieldExpression><![CDATA[$F{Invoice_Messers}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="0" width="102" height="20" uuid="41bba332-f7b8-48e0-9a52-09be35491932"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Messers]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="40" width="100" height="20" uuid="898457da-214e-4f07-8705-a4907be2824f"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Buyer's VAT No.]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="100" y="40" width="102" height="20" uuid="c11ccbf0-4fb2-4ab1-821a-9c0855141c88"/>
+				<textFieldExpression><![CDATA[$F{Invoice_Buyers_VAT_No}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="20" width="102" height="20" uuid="480970e0-112f-44b0-8d45-eee697c8a264"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Address]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="102" y="20" width="453" height="20" uuid="cf0630a7-a1e1-4085-bb83-7908f7f0971e"/>
+				<textFieldExpression><![CDATA[$F{Invoice_Address}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="60" width="555" height="1" uuid="0053c43f-d2e9-4ea9-b890-0db696750b61"/>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="21" splitType="Stretch">
+			<staticText>
+				<reportElement x="47" y="0" width="97" height="20" uuid="c60ea839-3395-419d-b725-b67e67836175"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Description]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="481" y="0" width="76" height="20" backcolor="#CCCCCC" uuid="6198223c-600f-4303-80fd-bc4c06d128be"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Sub Total (INR)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="288" y="0" width="56" height="20" uuid="8a7aebae-8464-406b-8b03-bf8459bc22cb"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Value (INR)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="47" height="20" uuid="43df1913-a513-4fad-a7f6-d627113cfa6d"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Serial No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="144" y="0" width="46" height="20" uuid="b6f22a6a-e6a5-4a07-bbfc-4b59fcaad4f3"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Qunatity]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="396" y="0" width="85" height="20" uuid="a399fa0f-f100-4602-bd29-2006e8c82800"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tax Amount (INR)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="241" y="0" width="47" height="20" uuid="44462ffa-d96a-4275-884f-fa23e3fe6784"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Per]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="190" y="0" width="51" height="20" uuid="648b8793-a159-4487-a126-bb926c7096d6"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Rate (INR)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="344" y="0" width="52" height="20" backcolor="#FFFFFF" uuid="e3b99268-c71a-4284-99de-c8d430d1bf05"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[VAT @ %]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement mode="Transparent" x="188" y="0" width="51" height="20" uuid="68906943-6910-4874-b43a-ddc772583919"/>
+			</rectangle>
+			<rectangle>
+				<reportElement mode="Transparent" x="394" y="0" width="85" height="20" uuid="27acef2d-a095-44b2-8378-f164daa83836"/>
+			</rectangle>
+			<rectangle>
+				<reportElement mode="Transparent" x="342" y="0" width="52" height="20" uuid="2deb9ae6-059c-4afc-8d68-2e513dabdacd"/>
+			</rectangle>
+			<rectangle>
+				<reportElement mode="Transparent" x="479" y="0" width="76" height="20" uuid="ee491b3d-b06c-4e11-ba53-7f05f00b6f14"/>
+			</rectangle>
+			<rectangle>
+				<reportElement mode="Transparent" x="286" y="0" width="56" height="20" uuid="f5a9ff44-92f7-474b-a645-22c7fe7f1087"/>
+			</rectangle>
+			<rectangle>
+				<reportElement mode="Transparent" x="142" y="0" width="46" height="20" uuid="de3a7725-3f5e-44a0-a83e-84312bd49b21"/>
+			</rectangle>
+			<rectangle>
+				<reportElement mode="Transparent" x="0" y="0" width="45" height="20" uuid="ba95d78a-638e-4a5c-a3da-bcbb6bb3f490"/>
+			</rectangle>
+			<rectangle>
+				<reportElement mode="Transparent" x="239" y="0" width="47" height="20" uuid="8a05c3fc-1c38-40f4-a329-2db1d63c0560"/>
+			</rectangle>
+			<rectangle>
+				<reportElement mode="Transparent" x="45" y="0" width="97" height="20" uuid="381e8cb0-8908-4699-b887-2656bdf28978"/>
+			</rectangle>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="28" splitType="Stretch">
+			<rectangle>
+				<reportElement mode="Transparent" x="0" y="0" width="555" height="20" uuid="28ad95db-536d-41e6-b5e4-71d4022bd5b7"/>
+			</rectangle>
+			<textField>
+				<reportElement x="45" y="2" width="97" height="20" uuid="aa4eb591-ba63-4f21-81eb-3e8c321cd0b5"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{Goods_Description}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="2" width="45" height="20" uuid="932c49ab-574b-42bd-9d3a-26547336c96a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{Goods_Serial_No}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="142" y="2" width="46" height="20" uuid="b5a5e2bc-b668-46d8-87f4-0c90285eae1f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{Goods_Quantity}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="188" y="2" width="51" height="20" uuid="89337aa5-1f72-4837-af91-c0dfb250aee9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{Goods_Rate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="239" y="2" width="47" height="20" uuid="7cec258c-206d-4f3c-b887-da4a050e1b34"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{Goods_Per}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="286" y="2" width="56" height="20" uuid="2f65b7e7-03f6-4ab9-b9ae-903a079f5d0e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{Goods_Value_}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="342" y="2" width="52" height="20" uuid="7218d4d0-766e-4524-81e2-3ac5f1c36f87"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{Goods_VAT}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="394" y="2" width="85" height="20" uuid="aa00b419-f186-4b81-b1fe-f12baa4d3d7e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{Goods_Tax}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="479" y="2" width="76" height="20" uuid="e4578264-eb97-4934-983f-47cffdd3a0f7"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{Goods_Sub_Total}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="51" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="89" height="20" uuid="2eb8521e-6027-4b32-b6c2-475e8a9982e1"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total no of items : ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="396" y="0" width="85" height="20" uuid="23be83bd-f0db-4e1a-bc31-948c25adafc2"/>
+				<textElement textAlignment="Right">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total (INR) ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="481" y="20" width="76" height="20" uuid="739b4a7f-e2ae-4702-934b-b579f305143f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[E. & O.E.]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="481" y="0" width="74" height="20" uuid="b549805f-739d-4c20-8b7f-5435c3a5ccce"/>
+				<textElement textAlignment="Right" verticalAlignment="Top">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Invoice_Grand_Total}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="88" y="0" width="100" height="20" uuid="e7df4f9e-f58d-443c-9146-fb908b9e9d1a"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Invoice_Total_Items}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="50" width="555" height="1" uuid="c2d5fb1d-56e0-4d96-b1b3-d90f267ce882"/>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="129" splitType="Stretch">
+			<textField>
+				<reportElement x="228" y="109" width="58" height="20" uuid="f72ef206-f2fd-4dcb-b3a7-c7024c2ee50c"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="288" y="109" width="40" height="20" uuid="203ae07e-19a3-47bc-8782-cc6f8eaae541"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="454" y="72" width="100" height="20" uuid="387bd523-fa1c-401a-93d5-63432b4d623e"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[For A.S. Udyog]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="88" y="12" width="100" height="20" uuid="e4c50258-a795-494d-b429-d01b7fdf0d13"/>
+				<textFieldExpression><![CDATA[$F{Invoice_Buyers_Order_No}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="88" y="32" width="100" height="20" uuid="bd21bef6-1a47-4b90-8b94-cc46884c1876"/>
+				<textFieldExpression><![CDATA[$F{Invoice_Date_1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="88" y="52" width="100" height="20" uuid="d4c68e4d-aa97-4f71-a95a-57069debc929"/>
+				<textFieldExpression><![CDATA[$F{Invoice_Challan_No}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="88" y="72" width="100" height="20" uuid="4d5c44b1-4a43-4f9f-be24-a5a9e7e3a96e"/>
+				<textFieldExpression><![CDATA[$F{Invoice_Date_2}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="52" width="88" height="20" uuid="b6920d81-40f9-4c35-8d4c-32fc247bd5e2"/>
+				<text><![CDATA[Challan No. ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="72" width="89" height="20" uuid="13896398-4eb8-4fa1-b68f-032798fc676f"/>
+				<text><![CDATA[Date ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="12" width="88" height="20" uuid="d73e1ced-5a8d-4f53-82ed-76355b8d3f2a"/>
+				<text><![CDATA[Buyer's Order No. ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="32" width="89" height="20" uuid="157d0261-635d-4c3d-a820-07ed17ba4d39"/>
+				<text><![CDATA[Date]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
